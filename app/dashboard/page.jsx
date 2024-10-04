@@ -1,7 +1,9 @@
 "use client";
-import html2pdf from 'html2pdf.js';
 import { useEffect, useState } from "react";
 import { Button } from "../../components/ui/button";
+
+// Dynamically import html2pdf.js to ensure it runs only on the client-side
+const html2pdf = typeof window !== "undefined" ? require("html2pdf.js") : null;
 
 const Dashboard = () => {
   const [mealPlan, setMealPlan] = useState(null);
@@ -61,17 +63,20 @@ const Dashboard = () => {
 
   const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack"];
 
+  // Only execute this function on the client-side
   const downloadPDF = () => {
-    const element = document.body; // Capture the entire body
-    const opt = {
-      margin: 10,
-      filename: 'meal-plan.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'mm', format: 'a3', orientation: 'landscape' }
-    };
+    if (typeof window !== "undefined" && html2pdf) {
+      const element = document.body; // Capture the entire body
+      const opt = {
+        margin: 10,
+        filename: 'meal-plan.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a3', orientation: 'landscape' }
+      };
 
-    html2pdf().set(opt).from(element).save();
+      html2pdf().set(opt).from(element).save();
+    }
   };
 
   const renderTable = () => (
@@ -142,16 +147,13 @@ const Dashboard = () => {
                 const meal = day.meals.find((m) => m.meal === mealType);
                 return (
                   <div key={mealIndex} className="mb-4 border-b-2 last:mb-0">
-                    <h3 className="text-lg font-semibold mb-2 text-orange-500">{mealType}</h3>
+                    <h3 className="text-lg font-semibold text-orange-500">{mealType}</h3>
                     {meal ? (
-                      <div className="bg-gray-50 rounded-lg p-3">
-                        <p className="font-medium text-gray-800 mb-2">{meal.recipe}</p>
-                        <div className="text-sm text-gray-600 grid grid-cols-2 gap-2">
-                          <p>Calories: {meal.macros?.calories ?? "N/A"} 🔥</p>
-                          <p>Protein: {meal.macros?.protein ?? "N/A"} 🍳</p>
-                          <p>Carbs: {meal.macros?.carbs ?? "N/A"} 🍚</p>
-                          <p>Fat: {meal.macros?.fat ?? "N/A"} 🥩</p>
-                        </div>
+                      <div>
+                        <p className="font-medium text-gray-800">{meal.recipe}</p>
+                        <p className="text-sm text-gray-700 bg-orange-50 rounded-lg p-2 flex-col font-semibold mt-2">
+                          Calories: {meal.macros?.calories ?? "N/A"} 🔥, Protein: {meal.macros?.protein ?? "N/A"} 🍳, Carbs: {meal.macros?.carbs ?? "N/A"} 🍚, Fat: {meal.macros?.fat ?? "N/A"} 🥩
+                        </p>
                       </div>
                     ) : (
                       <p className="text-gray-400 italic">No meal planned</p>

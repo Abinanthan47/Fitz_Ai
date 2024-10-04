@@ -37,162 +37,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ```
 fitz_ai
-├─ .git
-│  ├─ COMMIT_EDITMSG
-│  ├─ config
-│  ├─ description
-│  ├─ fsmonitor--daemon
-│  │  └─ cookies
-│  ├─ HEAD
-│  ├─ hooks
-│  │  ├─ applypatch-msg.sample
-│  │  ├─ commit-msg.sample
-│  │  ├─ fsmonitor-watchman.sample
-│  │  ├─ post-update.sample
-│  │  ├─ pre-applypatch.sample
-│  │  ├─ pre-commit.sample
-│  │  ├─ pre-merge-commit.sample
-│  │  ├─ pre-push.sample
-│  │  ├─ pre-rebase.sample
-│  │  ├─ pre-receive.sample
-│  │  ├─ prepare-commit-msg.sample
-│  │  ├─ push-to-checkout.sample
-│  │  ├─ sendemail-validate.sample
-│  │  └─ update.sample
-│  ├─ index
-│  ├─ info
-│  │  └─ exclude
-│  ├─ logs
-│  │  ├─ HEAD
-│  │  └─ refs
-│  │     └─ heads
-│  │        └─ master
-│  ├─ objects
-│  │  ├─ 0d
-│  │  │  └─ c9ea2bcc4104b736ec1c0cf6e6e0d8d82ab07d
-│  │  ├─ 13
-│  │  │  └─ d40b892057e0e4271c5c8f9fc8db30e80f2409
-│  │  ├─ 1a
-│  │  │  └─ 69fd2a450afc3bf47e08b22c149190df0ffdb4
-│  │  ├─ 1b
-│  │  │  └─ 62daacff96dad6584e71cd962051b82957c313
-│  │  ├─ 2a
-│  │  │  └─ 2e4b3bf8ba1c86d96fc2f5786597ad77a0e5e9
-│  │  ├─ 42
-│  │  │  └─ 564e50987be90d1775db7b80da781339ee19e4
-│  │  ├─ 45
-│  │  │  └─ daa18f5464f11e38a2e5dbdc02fae68fefbe8c
-│  │  ├─ 46
-│  │  │  └─ 78774e6d606704bce1897a5dab960cd798bf66
-│  │  ├─ 71
-│  │  │  └─ 8d6fea4835ec2d246af9800eddb7ffb276240c
-│  │  ├─ 7f
-│  │  │  └─ 0afc267b23f6538f10da42db3bde7d3e749319
-│  │  ├─ 82
-│  │  │  └─ 2a89c079b3fec7fd920c6e07d2f561b004558b
-│  │  ├─ 98
-│  │  │  └─ 00bf8dde1c4ef9a17a143eb622b4d56a089226
-│  │  ├─ a9
-│  │  │  └─ b517367b6043df134cb435af05103733725ea9
-│  │  ├─ af
-│  │  │  └─ 99692719e72e11241f0e9c9fe8838b86867098
-│  │  ├─ d7
-│  │  │  └─ a55a2a6d35b60ddec5463bb98fa4517f49ad19
-│  │  ├─ f2
-│  │  │  └─ ae185cbfd16946a534d819e9eb03924abbcc49
-│  │  ├─ fc
-│  │  │  └─ b741a341df889205f9868e01cdef51cc530ae9
-│  │  ├─ fd
-│  │  │  └─ 3dbb571a12a1c3baf000db049e141c888d05a8
-│  │  ├─ info
-│  │  └─ pack
-│  └─ refs
-│     ├─ heads
-│     │  └─ master
-│     └─ tags
-├─
-```
-fitz_ai
-├─ .env
-├─ .git
-│  ├─ COMMIT_EDITMSG
-│  ├─ config
-│  ├─ description
-│  ├─ fsmonitor--daemon
-│  │  └─ cookies
-│  ├─ HEAD
-│  ├─ hooks
-│  │  ├─ applypatch-msg.sample
-│  │  ├─ commit-msg.sample
-│  │  ├─ fsmonitor-watchman.sample
-│  │  ├─ post-update.sample
-│  │  ├─ pre-applypatch.sample
-│  │  ├─ pre-commit.sample
-│  │  ├─ pre-merge-commit.sample
-│  │  ├─ pre-push.sample
-│  │  ├─ pre-rebase.sample
-│  │  ├─ pre-receive.sample
-│  │  ├─ prepare-commit-msg.sample
-│  │  ├─ push-to-checkout.sample
-│  │  ├─ sendemail-validate.sample
-│  │  └─ update.sample
-│  ├─ index
-│  ├─ info
-│  │  └─ exclude
-│  ├─ logs
-│  │  ├─ HEAD
-│  │  └─ refs
-│  │     └─ heads
-│  │        └─ master
-│  ├─ objects
-│  │  ├─ 0d
-│  │  │  └─ c9ea2bcc4104b736ec1c0cf6e6e0d8d82ab07d
-│  │  ├─ 13
-│  │  │  └─ d40b892057e0e4271c5c8f9fc8db30e80f2409
-│  │  ├─ 1a
-│  │  │  └─ 69fd2a450afc3bf47e08b22c149190df0ffdb4
-│  │  ├─ 1b
-│  │  │  └─ 62daacff96dad6584e71cd962051b82957c313
-│  │  ├─ 2a
-│  │  │  └─ 2e4b3bf8ba1c86d96fc2f5786597ad77a0e5e9
-│  │  ├─ 42
-│  │  │  └─ 564e50987be90d1775db7b80da781339ee19e4
-│  │  ├─ 45
-│  │  │  └─ daa18f5464f11e38a2e5dbdc02fae68fefbe8c
-│  │  ├─ 46
-│  │  │  └─ 78774e6d606704bce1897a5dab960cd798bf66
-│  │  ├─ 71
-│  │  │  └─ 8d6fea4835ec2d246af9800eddb7ffb276240c
-│  │  ├─ 7f
-│  │  │  └─ 0afc267b23f6538f10da42db3bde7d3e749319
-│  │  ├─ 82
-│  │  │  └─ 2a89c079b3fec7fd920c6e07d2f561b004558b
-│  │  ├─ 98
-│  │  │  └─ 00bf8dde1c4ef9a17a143eb622b4d56a089226
-│  │  ├─ a9
-│  │  │  └─ b517367b6043df134cb435af05103733725ea9
-│  │  ├─ af
-│  │  │  └─ 99692719e72e11241f0e9c9fe8838b86867098
-│  │  ├─ d7
-│  │  │  └─ a55a2a6d35b60ddec5463bb98fa4517f49ad19
-│  │  ├─ f2
-│  │  │  └─ ae185cbfd16946a534d819e9eb03924abbcc49
-│  │  ├─ fc
-│  │  │  └─ b741a341df889205f9868e01cdef51cc530ae9
-│  │  ├─ fd
-│  │  │  └─ 3dbb571a12a1c3baf000db049e141c888d05a8
-│  │  ├─ info
-│  │  └─ pack
-│  └─ refs
-│     ├─ heads
-│     │  └─ master
-│     └─ tags
+├
 ├─ .gitignore
 ├─ app
 │  ├─ api
 │  │  ├─ auth
 │  │  │  └─ [...nextauth].js
 │  │  └─ mealPlans.js
+│  ├─ components
+│  │  └─ ui
+│  │     ├─ Footer.jsx
+│  │     └─ PricingSectionWhite.tsx
+│  ├─ dashboard
+│  │  └─ page.jsx
 │  ├─ favicon.ico
 │  ├─ fonts
 │  │  ├─ GeistMonoVF.woff
@@ -213,33 +70,43 @@ fitz_ai
 │  ├─ StepTwo.jsx
 │  └─ ui
 │     ├─ button.jsx
+│     ├─ card.jsx
 │     ├─ dialog.jsx
 │     ├─ form.jsx
 │     ├─ forms
 │     │  ├─ EditData.jsx
 │     │  └─ StepperForm.jsx
+│     ├─ grid-pattern.jsx
 │     ├─ input.jsx
 │     ├─ label.jsx
 │     ├─ radio-group.jsx
 │     ├─ select.jsx
+│     ├─ skeleton.jsx
 │     ├─ textarea.jsx
-│     └─ toggle.jsx
+│     ├─ toast.jsx
+│     ├─ toaster.jsx
+│     ├─ toggle.jsx
+│     └─ tooltip.jsx
 ├─ components.json
 ├─ constants
 │  └─ Options.jsx
+├─ hooks
+│  └─ use-toast.js
 ├─ jsconfig.json
 ├─ lib
-│  ├─ prisma.js
 │  └─ utils.js
 ├─ next.config.mjs
 ├─ package-lock.json
 ├─ package.json
 ├─ postcss.config.mjs
-├─ prisma
-│  └─ schema.prisma
+├─ public
+│  ├─ mockup.png
+│  ├─ mockup2.png
+│  └─ mockup3.png
 ├─ README.md
 ├─ services
 │  └─ Aimodal.jsx
-└─ tailwind.config.js
+├─ tailwind.config.js
+└─ tsconfig.json
 
-```"# Fitz_Ai" 
+```

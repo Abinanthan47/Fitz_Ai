@@ -29,7 +29,7 @@ export default function Home() {
         <div className="z-10 text-center ">
           <p className="text-5xl md:text-7xl font-semibold text-black dark:text-white">
             Your Personal <br />{" "}
-            <span className="bg-gradient-to-r from-orange-400 to-orange-600 text-transparent bg-clip-text">
+            <span className="text-orange-500">
               Health
             </span>{" "}
             Assistant
